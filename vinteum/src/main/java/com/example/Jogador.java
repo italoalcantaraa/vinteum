@@ -1,20 +1,20 @@
-package main.java.com.example;
+package com.example;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Jogador {
-    private int pontos = 0;
-    private List<Carta> cartas = new ArrayList<>();
-    private boolean parou;
+    protected int pontos = 0;
+    protected List<Carta> cartas = new ArrayList<>();
+    protected boolean parou;
 
     public void receberCarta(Carta carta) {
-        pontos = +carta.getNumero();
         cartas.add(carta);
+        pontos += carta.getNumero();
     }
 
     public void parar() {
-        parou = !parou;
+        parou = true;
     }
 
     public int getPontos() {

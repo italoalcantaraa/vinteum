@@ -1,12 +1,12 @@
-package main.java.com.example;
+package com.example;
 
 public class VerificadorResultado {
     public static String verificar(int resultado) {
         if (resultado > 0)
-            return "Jogador ganhou";
+            return "Você ganhou";
 
         if (resultado < 0)
-            return "Jogador perdeu";
+            return "Você perdeu";
 
         return "Empate";
     }

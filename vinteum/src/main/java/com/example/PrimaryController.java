@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
-import main.java.com.example.Jogo;
 
 public class PrimaryController {
 
@@ -22,20 +21,18 @@ public class PrimaryController {
     @FXML
     private Label resultado;
 
-    private Jogo jogo;
+    private Jogo jogo = new Jogo();
 
     public void turno() {
-        if (!jogo.getJogador().parou()) {
+        if (!jogo.getComputador().parou())
+            jogo.distribuiCartaParaJogador(jogo.getComputador());
+
+        if (!jogo.getJogador().parou())
             jogo.distribuiCartaParaJogador(jogo.getJogador());
         
-            jogo.acabou();
-        }
-        
-        if (!jogo.getComputador().parou()) {
-            jogo.distribuiCartaParaJogador(jogo.getComputador());
-        
-            jogo.acabou();
-        }
+
+        atualizar();
+        jogo.acabou();
     }
 
     public void atualizar() {

@@ -1,6 +1,6 @@
-package main.java.com.example;
+package com.example;
 
-import java.security.cert.PKIXBuilderParameters;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -10,7 +10,7 @@ public class Monte {
     public Monte() {
         for (byte count = 1; count <= 4; count++) {
             for (byte count2 = 1; count2 <= 10; count2++) {
-                cartas.add(new Carta(count2, Naipe.values()[count]));
+                cartas.add(new Carta(count2, Naipe.values()[count - 1]));
             }
         }
     }

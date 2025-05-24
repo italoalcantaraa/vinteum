@@ -1,7 +1,13 @@
-package main.java.com.example;
+package com.example;
 
 public class VerificadorAcabou {
-    public static boolean parou(Jogador jogador) {
-        return jogador.parou() || jogador.getPontos() > 21;
+    public static boolean acabou(Jogador... jogador) {
+        for (Jogador j : jogador) {
+
+            if (j.parou() || j.getPontos() > 21)
+                return true;
+
+        }
+        return false;
     }
 }

@@ -1,4 +1,4 @@
-package main.java.com.example;
+package com.example;
 
 public class Jogo {
     protected Monte monte = new Monte();
@@ -9,18 +9,18 @@ public class Jogo {
         monte.embaralhar();
     }
 
-    public Carta distribuiCartaParaJogador(Jogador jogador) {
-        if (jogador.parou())
+    public Carta distribuiCartaParaJogador(Jogador jogadorOuMaquina) {
+        if (jogadorOuMaquina.parou())
             return null;
 
         Carta cartaVirada = monte.virar();
-        jogador.receberCarta(cartaVirada);
+        jogadorOuMaquina.receberCarta(cartaVirada);
 
         return cartaVirada;
     }
 
     public boolean acabou() {
-        return VerificadorAcabou.acabou(this);
+        return VerificadorAcabou.acabou(jogador, computador);
     }
 
     public String resultado() {

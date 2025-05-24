@@ -1,5 +1,5 @@
-package main.java.com.example;
+package com.example;
 
 public interface Observer {
-    int calcularResultado(Jogador jogador);
+    int calcularResultado(Jogador jogador, Computador computador);
 }
